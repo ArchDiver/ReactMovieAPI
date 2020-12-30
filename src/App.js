@@ -7,6 +7,9 @@ function App() {
       <header>
         <h1>Movie Database</h1>
       </header>
+      <main>
+        
+      </main>
     </div>
   );
 }
