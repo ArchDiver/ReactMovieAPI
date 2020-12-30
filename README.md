@@ -1,6 +1,6 @@
 # This is a ReactApp that allows you to search movies with a connected API
 
-
+## This was created by Leland Crawford based on https://www.youtube.com/watch?v=ufodJVcpmps
 
 
 
