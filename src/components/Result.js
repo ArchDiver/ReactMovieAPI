@@ -8,3 +8,5 @@ function Result({ result }) {
         </div>
         )
 }
+
+export default Result;
