@@ -29,7 +29,7 @@ function App() {
     setState(prevState => {
       return {...prevState, s: s }
     });
-    console.log(state.s)
+    // console.log(state.s)
   }
 
   return (
