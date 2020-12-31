@@ -8,16 +8,20 @@ function App() {
     s: "",
     results: [],
     select: {}
-  })
+  });
   const apiurl = "http://www.omdbapi.com/?i=tt3896198&apikey=b17dc23e";
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then ((data) => {
-        console.log(data)
-      });
-    }
+      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+        let results = data.Search;
+
+        setState(prevState =>{ 
+          return {...prevState, results: results}
+      })
+    });
   }
+}
 
   const handleInput = (e) => {
     let s = e.target.value;
@@ -34,7 +38,7 @@ function App() {
         <h1>Movie Database</h1>
       </header>
       <main>
-        <Search handleInput= {handleInput}/>
+        <Search handleInput= {handleInput} search={search}/>
 
       </main>
     </div>
