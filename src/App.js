@@ -62,7 +62,7 @@ function App() {
 
         <Results results={state.results} openPopup={openPopup} />
 
-        {/* {(typeof state.selected.Title != 'undefined') ? <Popup selected={state.selected} closePopup={closePopup} /> : false} */}
+        {(typeof state.selected.title != 'undefined') ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>
     </div>
   );
