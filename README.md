@@ -1,8 +1,9 @@
 # This is a ReactApp that allows you to search movies with a connected API
 
 ## It is live at: https://archdiver.github.io/ReactMovieAPI/
+## Using: http://www.omdbapi.com/
 
-## This was created by Leland Crawford based on https://www.youtube.com/watch?v=ufodJVcpmps
+############### This was created by Leland Crawford based on https://www.youtube.com/watch?v=ufodJVcpmps
 
 
 
