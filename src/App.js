@@ -35,8 +35,10 @@ function App() {
   }
 
   const openPopup = id => {
-    axios(apiURL + "&i" +id).then(({ data }) => { 
+    axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
+
+      console.log(result);
 
       setState(prevState => {
         return { ...prevState, selected: result }
@@ -46,7 +48,7 @@ function App() {
 
   const closePopup = () => {
     setState(prevState => {
-      return{ ...prevState, selected: {} }
+      return { ...prevState, selected: {} }
     });
   }
 
@@ -56,11 +58,11 @@ function App() {
         <h1>Movie Database</h1>
       </header>
       <main>
-        <Search handleInput= {handleInput} search={search}/>
+        <Search handleInput={handleInput} search={search} />
 
         <Results results={state.results} openPopup={openPopup} />
 
-        {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
+        {/* {(typeof state.selected.Title != 'undefined') ? <Popup selected={state.selected} closePopup={closePopup} /> : false} */}
       </main>
     </div>
   );
