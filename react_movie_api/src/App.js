@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Search from './components/Search'
@@ -7,6 +7,9 @@ import Popup from './components/Popup'
 
 
 function App() {
+  useEffect(() => {
+    fetch('/movies')
+  })
   const [state, setState] = useState({
     s: "",
     results: [],

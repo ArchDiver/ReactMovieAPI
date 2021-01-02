@@ -7,7 +7,6 @@ function Search({ handleInput, search }){
                 onChange={handleInput}
                 onKeyPress={search}
                 />
-
         </section>
     )
 }
