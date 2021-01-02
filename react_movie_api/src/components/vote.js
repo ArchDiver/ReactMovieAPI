@@ -1,21 +1,13 @@
 import React from 'react'
-immport axios from 'axios'
+import axios from 'axios'
 
 function Vote( selected, like, db ) {
-    if (like == True){
-        axios("https://localhonst/5000/", {imdbID : selected.imdbID} )
-        .then( (response) => {
-            if (like == True) {
-
-                axios
-                axios.post("https://localhonst/5000/", )
-            }
-
+    if (like === true){
+        axios.patch(db + '/' + selected.likes + 1)
     }
-    } )
-
-
+    else if (like === false){
+        axios.patch(db + '/' + selected.dislikes + 1)
+    }
 }
-
 export default Vote;
 

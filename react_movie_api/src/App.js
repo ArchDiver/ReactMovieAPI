@@ -5,15 +5,17 @@ import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
 import Movie from './components/movie'
+// import Vote from 'components/vote'
 
 
 function App() {
-  const db = "https://localhonst/5000/";
+  const db = "https://localhonst/5000/movies";
 
   const [state, setState] = useState({
     s: "",
     results: [],
-    selected: {}
+    selected: {},
+    checked: false
   });
   const apiurl = "http://www.omdbapi.com/?apikey=b17dc23e";
 
@@ -53,7 +55,7 @@ function App() {
       });
   }
 
-  const openPopup = (id, checkMovie)  => {
+  const openPopup = (id, checkMovie, db)  => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
@@ -62,12 +64,11 @@ function App() {
       setState(prevState => {
         return { ...prevState, selected: result }
       });
-    // axios.get("http://localhost/5000/imdbID", )
     });
   }
 
 
-  const handleVote = id => {
+  const handleVote = id => {    
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
@@ -93,7 +94,7 @@ function App() {
       <main>
         <Search handleInput={handleInput} search={search} />
 
-        <Results results={state.results} openPopup={openPopup} /> {/* checkMovie={checkMovie} */}
+        <Results results={state.results} checkMovie={checkMovie} openPopup={openPopup} /> {/*  handleVote={handleVote*/}
 
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>

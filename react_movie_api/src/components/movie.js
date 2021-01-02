@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
-function Movie( selected ) {
-    const [movies, setMovies] = useState([]);
+function Movie( selected,  db ) {
+    if (selected.imdbID in db.imdbID){
+        axios.all([
+            axios.get(db.imdbID.likes),
+            axios.get(db.imdbID.dislikes),
+            axios.get(db.imdbID.ratings)
+        ])
+        .then(axios.spread(( likes, dislikes) => {
+        return { likes, dislikes};
+        }))
+    }
+    else {
+        axios.post(db, {imdbID: selected.imdbID, title:selected.title, dislikes:0, likes:0, rating:0});
+        axios.all([
+            axios.get(db.imdbID.likes),
+            axios.get(db.imdbID.dislikes),
+            axios.get(db.imdbID.ratings)
+        ])
+        .then(axios.spread(( likes, dislikes, ratings) => {
+        return { likes, dislikes, ratings};
+        }))
+    }
+}
   
-    useEffect(() => {
-      fetch("/movies").then(response =>
-        response.json().then(data => {
-          setMovies(data.movies);
-        })
-      );
-    }, []);
-  
-    return (
-      <Container style={{ marginTop: 40 }}>
-        <MovieForm
-          onNewMovie={movie =>
-            setMovies(currentMovies => [movie, ...currentMovies])
-          }
-        />
-        <Movies movies={movies} />
-      </Container>
-    );
-  }
-  
-  export default Movie;
+export default Movie;
 
     

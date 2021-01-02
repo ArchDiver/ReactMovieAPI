@@ -1,7 +1,13 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react'
 
-function Popup({ selected, checkMovie, closePopup }) {
+function Popup({ selected, checkMovie, closePopup, handleVote, db }) {
+	const ID = selected.imdbID
+	console.log(ID)
+	// const movie = db.ID;
+	// console.log(movie)
+
+	
 
 	
 
@@ -18,22 +24,28 @@ function Popup({ selected, checkMovie, closePopup }) {
 				</div>
 				<div>
 					<div class="ui right labeled button">
-						<button class="ui icon button" tabindex="0">
+						<button className="likeButton" class="ui icon button" tabindex="0" onClick={handleVote}>
 						<i aria-hidden="true" class="thumbs up outline icon"></i> 
 						Like
 						</button>
-						<a class="ui left pointing basic label">2,048</a>
+						<a class="ui left pointing basic label">25
+							{/* {db.selected.likes} */}
+						</a>
 					</div>
 					<div class="ui left labeled button">
-						<a class="ui right pointing basic label">5</a>
-						<button class="ui icon button" tabindex="0">
+						<a class="ui right pointing basic label">30
+							{/* {db.select.dislikes} */}
+						</a>
+						<button className="dislikeButton" class="ui icon button" tabindex="0" onClick={handleVote}>
 							<i aria-hidden="true" class="thumbs down outline icon"></i> 
 							Dislike
 						</button>
 					</div>
 					<div class="ui left labeled button">
-						<a class="ui right pointing basic label">25</a>
-						<button class="ui icon button" tabindex="0">
+						<a class="ui right pointing basic label">50
+							{/* {db.selected.ratings} */}
+						</a>
+						<button className="ratingButton" class="ui icon button" tabindex="0">
 							<i aria-hidden="true" class="">Rating</i> 
 						</button>
 					</div>
