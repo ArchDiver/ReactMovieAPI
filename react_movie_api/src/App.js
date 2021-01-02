@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import axios from 'axios'
 
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
+
 
 function App() {
   const [state, setState] = useState({
@@ -67,4 +68,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
