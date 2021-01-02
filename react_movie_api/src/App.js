@@ -7,9 +7,7 @@ import Popup from './components/Popup'
 
 
 function App() {
-  useEffect(() => {
-    fetch('/movies')
-  })
+
   const [state, setState] = useState({
     s: "",
     results: [],
