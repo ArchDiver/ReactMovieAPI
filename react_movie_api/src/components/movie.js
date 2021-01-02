@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-function Movie() {
+function Movie( selected ) {
     const [movies, setMovies] = useState([]);
   
     useEffect(() => {

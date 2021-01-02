@@ -4,9 +4,11 @@ import axios from 'axios'
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
+import Movie from './components/movie'
 
 
 function App() {
+  const db = "https://localhonst/5000/";
 
   const [state, setState] = useState({
     s: "",
@@ -35,7 +37,37 @@ function App() {
     });
   }
 
-  const openPopup = id => {
+  const checkMovie = (id, db) => {
+    axios.all([
+      axios.get(apiurl + "&i=" + id)
+      
+    ])
+      .then(({ data }) => {
+        let result = data;
+
+        console.log(result);
+
+        setState(prevState => {
+          return { ...prevState, selected: result }
+        });
+      });
+  }
+
+  const openPopup = (id, checkMovie)  => {
+    axios(apiurl + "&i=" + id).then(({ data }) => {
+      let result = data;
+
+      console.log(result);
+
+      setState(prevState => {
+        return { ...prevState, selected: result }
+      });
+    // axios.get("http://localhost/5000/imdbID", )
+    });
+  }
+
+
+  const handleVote = id => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
@@ -61,12 +93,14 @@ function App() {
       <main>
         <Search handleInput={handleInput} search={search} />
 
-        <Results results={state.results} openPopup={openPopup} />
+        <Results results={state.results} openPopup={openPopup} /> {/* checkMovie={checkMovie} */}
 
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>
     </div>
   );
 }
+
+
 
 export default App;
