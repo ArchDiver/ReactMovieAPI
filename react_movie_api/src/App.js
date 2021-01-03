@@ -80,11 +80,11 @@ function App() {
     });
   }
 
-  // const closePopup = () => {
-  //   setState(prevState => {
-  //     return { ...prevState, selected: {} }
-  //   });
-  // }
+  const closePopup = () => {
+    setState(prevState => {
+      return { ...prevState, selected: {} }
+    });
+  }
 
   return (
     <div className="App">
