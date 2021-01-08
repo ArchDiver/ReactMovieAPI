@@ -25,7 +25,6 @@ function Movie( selected,  db ) {
         }))
     }
 }
-  
 export default Movie;
 
     
