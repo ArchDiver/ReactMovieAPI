@@ -15,13 +15,13 @@ def add_movie():
 
     return 'Movie Added', 201
 
-# @main.route('/movies')
-# def movies():
-#     movies_list = Movie.query.all()
-#     movies = []
+@main.route('/movies')
+def movies():
+    movies_list = Movie.query.all()
+    movies = []
 
-#     for movie in movies_list:
-#         movies.append({'imdbID' : movie.imdbID, 'title' : movie.title, 'rating' : movie.rating, 'likes' : movie.likes, 'dislikes' : movie.dislikes})
+    for movie in movies_list:
+        movies.append({'imdbID' : movie.imdbID, 'title' : movie.title, 'rating' : movie.rating, 'likes' : movie.likes, 'dislikes' : movie.dislikes})
 
 
-#     return jsonify({'movies' : movies})
+    return jsonify({'movies' : movies})
