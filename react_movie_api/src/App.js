@@ -68,17 +68,17 @@ function App() {
   }
 
 
-  const handleVote = id => {    
-    axios(apiurl + "&i=" + id).then(({ data }) => {
-      let result = data;
+  // const handleVote = id => {    
+  //   axios(apiurl + "&i=" + id).then(({ data }) => {
+  //     let result = data;
 
-      console.log(result);
+  //     console.log(result);
 
-      setState(prevState => {
-        return { ...prevState, selected: result }
-      });
-    });
-  }
+  //     setState(prevState => {
+  //       return { ...prevState, selected: result }
+  //     });
+  //   });
+  // }
 
   const closePopup = () => {
     setState(prevState => {
