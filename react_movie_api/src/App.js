@@ -4,8 +4,8 @@ import axios from 'axios'
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
-import Movie from './components/movie'
-import Vote from 'components/vote'
+// import Movie from './components/movie'
+// import Vote from 'components/vote'
 
 
 function App() {
