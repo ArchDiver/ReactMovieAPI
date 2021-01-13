@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react'
+// import { Button } from 'semantic-ui-react'
 
 function Popup({ selected, checkMovie, closePopup, handleVote, db }) {
 	const ID = selected.imdbID
