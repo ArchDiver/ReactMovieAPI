@@ -59,5 +59,5 @@ function Popup({ selected, checkMovie, closePopup, handleVote, db }) {
 	)
 }
 
-export default Popup
+// export default Popup
 
