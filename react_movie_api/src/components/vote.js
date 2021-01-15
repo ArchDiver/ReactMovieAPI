@@ -9,5 +9,5 @@ function Vote( selected, like, db ) {
         axios.patch(db + '/' + selected.dislikes + 1)
     }
 }
-// export default Vote;
+export default Vote;
 
