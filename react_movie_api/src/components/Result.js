@@ -13,4 +13,4 @@ function Result({ result, openPopup, checkMovie, db }) {
 	)
 }
 
-export default Result
+// export default Result
