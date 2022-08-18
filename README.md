@@ -3,7 +3,7 @@
 ## It is live at: https://archdiver.github.io/ReactMovieAPI/
 ## Using: http://www.omdbapi.com/
 
-This was created by Leland Crawford based on https://www.youtube.com/watch?v=ufodJVcpmps
+<!-- This was created by Leland Crawford based on https://www.youtube.com/watch?v=ufodJVcpmps -->
 
 
 
